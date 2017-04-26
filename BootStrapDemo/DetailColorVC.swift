@@ -21,8 +21,6 @@ class DetailColorVC: UIViewController {
 
         let frame = CGRect(x: 0, y: self.view.frame.height/2, width: self.view.frame.width, height: self.view.frame.width)
 
-
-
         let chart = PieChartView(frame: frame , arrColor: self.getUIColor(arr: arr))
         self.view.addSubview(chart)
         self.view.addSubview(drawInfo(arr: arr))

@@ -10,13 +10,12 @@ import UIKit
 
 class AppScreenVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var imageLoad: UIImageView!
-    var imagePicker = UIImagePickerController()
+    
+    var mainImageView: UIImageView!
+    var baseImage = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        imagePicker.delegate = self
         
         self.view.backgroundColor = UIColor.white
         addColorListButton()
@@ -33,23 +32,20 @@ class AppScreenVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
     }
     
     func addImageView(){
-        imageLoad = UIImageView(frame: CGRect(x: 0, y: 300, width: 300, height: 300))
+        mainImageView = UIImageView(frame: CGRect(x: 0, y: 300, width: 300, height: 300))
         
-        self.view.addSubview(imageLoad)
+        mainImageView.backgroundColor = UIColor.cyan
+        self.view.addSubview(mainImageView)
         
     }
     
-    private func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imageLoad.contentMode = .scaleAspectFit
-            imageLoad.image = pickedImage
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage:UIImage = (info[UIImagePickerControllerOriginalImage]) as? UIImage
+        {
+            baseImage = pickedImage
+            mainImageView.image = baseImage
         }
-        
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func addAlbumButton(){
@@ -73,9 +69,10 @@ class AppScreenVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
     
     func openCamera(){
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
-//            let imagePicker = UIImagePickerController()
-//            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+            var imagePicker = UIImagePickerController()
+
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera;
             imagePicker.allowsEditing = false
             self.present(imagePicker, animated: true, completion: nil)
             
@@ -84,15 +81,14 @@ class AppScreenVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
     
     func loadAlbum(){
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-//            let imagePicker = UIImagePickerController()
-//            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            var imagePicker = UIImagePickerController()
+
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary;
             imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
             
         }
-
-        
     }
     
     
@@ -115,7 +111,6 @@ class AppScreenVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         path = Bundle.main.path(forResource:"colorData", ofType: "plist")!
         dictData = NSDictionary(contentsOfFile: path)!
         arrData = dictData["data"] as! NSArray
-        
         
         let mainScreen = TableViewVC(style: UITableViewStyle.grouped)
         mainScreen.menu = []
