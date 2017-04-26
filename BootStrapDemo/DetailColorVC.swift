@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ScreenA: UIViewController {
-    var delegateMain:MainScreen!
+class DetailColorVC: UIViewController {
+    var delegateMain: TableViewVC!
     var indexSection:Int!
 
     override func viewDidLoad() {
@@ -95,6 +95,5 @@ extension UIView {
         }
         return hex
         
-//        return color
     }
 }

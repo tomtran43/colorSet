@@ -5,7 +5,7 @@
 
 import UIKit
 
-class MainScreen: UITableViewController {
+class TableViewVC: UITableViewController {
     var about: String!
     
     var menu: [MenuSection]!
@@ -13,7 +13,7 @@ class MainScreen: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let barButoonItem = UIBarButtonItem(title: "About", style: UIBarButtonItemStyle.plain, target: self, action: #selector(MainScreen.onAbout))
+        let barButoonItem = UIBarButtonItem(title: "About", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TableViewVC.onAbout))
         self.navigationItem.rightBarButtonItem = barButoonItem
         
         self.tableView.contentInset = UIEdgeInsetsMake(20,0,0,0)
@@ -94,8 +94,8 @@ class MainScreen: UITableViewController {
                 
             }
 //            detailScreen.title = item.title
-             (detailScreen as! ScreenA).delegateMain = self
-             (detailScreen as! ScreenA).indexSection = indexPath.section
+             (detailScreen as! DetailColorVC).delegateMain = self
+             (detailScreen as! DetailColorVC).indexSection = indexPath.section
 
             self.navigationController!.pushViewController(detailScreen, animated: true)
             

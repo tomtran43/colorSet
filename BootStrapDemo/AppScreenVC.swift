@@ -8,23 +8,48 @@
 
 import UIKit
 
-class AppScreenViewController: UIViewController {
+class AppScreenVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var baseImage = UIImage()
-    
+    var imageLoad: UIImageView!
+    var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imagePicker.delegate = self
+        
         self.view.backgroundColor = UIColor.white
         addColorListButton()
         addAlbumButton()
+        addCameraButton()
+        addImageView()
+        
         // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func addImageView(){
+        imageLoad = UIImageView(frame: CGRect(x: 0, y: 300, width: 300, height: 300))
+        
+        self.view.addSubview(imageLoad)
+        
+    }
+    
+    private func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageLoad.contentMode = .scaleAspectFit
+            imageLoad.image = pickedImage
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
     
     func addAlbumButton(){
@@ -37,11 +62,38 @@ class AppScreenViewController: UIViewController {
         
     }
     
-    func loadAlbum(){
+    func addCameraButton(){
+        let button = UIButton(frame: CGRect(x: self.view.bounds.size.width*2/3, y: 200, width: 50, height: 50))
         
-
+        button.backgroundColor = UIColor.red
+        button.addTarget(self, action: #selector(openCamera), for: .touchUpInside)
+        self.view.addSubview(button)
+        
     }
     
+    func openCamera(){
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+//            let imagePicker = UIImagePickerController()
+//            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+            
+        }
+    }
+    
+    func loadAlbum(){
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+//            let imagePicker = UIImagePickerController()
+//            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+            
+        }
+
+        
+    }
     
     
     func addColorListButton(){
@@ -65,7 +117,7 @@ class AppScreenViewController: UIViewController {
         arrData = dictData["data"] as! NSArray
         
         
-        let mainScreen = MainScreen(style: UITableViewStyle.grouped)
+        let mainScreen = TableViewVC(style: UITableViewStyle.grouped)
         mainScreen.menu = []
         
         for index in 0..<arrData.count {
@@ -84,7 +136,7 @@ class AppScreenViewController: UIViewController {
                                           color_2: item[2] as! String,
                                           color_3: item[3] as! String,
                                           color_4: item[4] as! String),
-                     viewClass: "ScreenA")
+                     viewClass: "DetailColorVC")
                 
                 ])
             
@@ -92,7 +144,7 @@ class AppScreenViewController: UIViewController {
             mainScreen.menu.append(basic)
         }
         
-        mainScreen.title = "Gesture Recognizer"
+        mainScreen.title = "Color Set"
         mainScreen.about = "Gesture Recognizer iOS8"
         
         self.navigationController?.pushViewController(mainScreen, animated: true)
@@ -100,33 +152,3 @@ class AppScreenViewController: UIViewController {
     
 }
 
-extension AppScreenViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
-    func thisIsTheFunctionWeAreCalling() {
-        let camera = DSCameraHandler(delegate_: self)
-        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        optionMenu.popoverPresentationController?.sourceView = self.view
-        
-        let takePhoto = UIAlertAction(title: "Take Photo", style: .default) { (alert : UIAlertAction!) in
-            camera.getCameraOn(self, canEdit: true)
-        }
-        let sharePhoto = UIAlertAction(title: "Photo Library", style: .default) { (alert : UIAlertAction!) in
-            camera.getPhotoLibraryOn(self, canEdit: true)
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (alert : UIAlertAction!) in
-        }
-        optionMenu.addAction(takePhoto)
-        optionMenu.addAction(sharePhoto)
-        optionMenu.addAction(cancelAction)
-        self.present(optionMenu, animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        let image = info[UIImagePickerControllerEditedImage] as! UIImage
-        
-        // image is our desired image
-        
-        picker.dismiss(animated: true, completion: nil)
-    }
-}

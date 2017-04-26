@@ -10,36 +10,28 @@
 		05563D2B1EAFA4C000BFEDC7 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05563D2A1EAFA4C000BFEDC7 /* PieChartView.swift */; };
 		19664C331EAF414A00A16D0E /* colorData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19664C321EAF414A00A16D0E /* colorData.plist */; };
 		19664C371EAF4E6300A16D0E /* colorBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19664C361EAF4E6300A16D0E /* colorBar.swift */; };
-		199D34511EB055D4003077FB /* AppScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D34501EB055D4003077FB /* AppScreenViewController.swift */; };
-		199D34531EB082D3003077FB /* DSCameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D34521EB082D3003077FB /* DSCameraHandler.swift */; };
-		E23FDAB51D7E721800DA0E05 /* ScreenA.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23FDAB41D7E721800DA0E05 /* ScreenA.swift */; };
-		E24579B51D7EBD6F00D164A2 /* ScreenB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24579B31D7EBD6F00D164A2 /* ScreenB.swift */; };
-		E24579B61D7EBD6F00D164A2 /* ScreenB.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24579B41D7EBD6F00D164A2 /* ScreenB.xib */; };
+		199D34511EB055D4003077FB /* AppScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D34501EB055D4003077FB /* AppScreenVC.swift */; };
+		E23FDAB51D7E721800DA0E05 /* DetailColorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23FDAB41D7E721800DA0E05 /* DetailColorVC.swift */; };
 		E2550FE61D7DC16600B574D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2550FE51D7DC16600B574D9 /* AppDelegate.swift */; };
 		E2550FED1D7DC16600B574D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2550FEC1D7DC16600B574D9 /* Assets.xcassets */; };
 		E2550FF01D7DC16600B574D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2550FEE1D7DC16600B574D9 /* LaunchScreen.storyboard */; };
 		E2550FFB1D7DC36100B574D9 /* BootLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2550FF81D7DC36100B574D9 /* BootLogic.swift */; };
-		E2550FFC1D7DC36100B574D9 /* ConsoleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2550FF91D7DC36100B574D9 /* ConsoleScreen.swift */; };
-		E2550FFD1D7DC36100B574D9 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2550FFA1D7DC36100B574D9 /* MainScreen.swift */; };
+		E2550FFD1D7DC36100B574D9 /* TableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2550FFA1D7DC36100B574D9 /* TableViewVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		05563D2A1EAFA4C000BFEDC7 /* PieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		19664C321EAF414A00A16D0E /* colorData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = colorData.plist; sourceTree = "<group>"; };
 		19664C361EAF4E6300A16D0E /* colorBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = colorBar.swift; sourceTree = "<group>"; };
-		199D34501EB055D4003077FB /* AppScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenViewController.swift; sourceTree = "<group>"; };
-		199D34521EB082D3003077FB /* DSCameraHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSCameraHandler.swift; sourceTree = "<group>"; };
-		E23FDAB41D7E721800DA0E05 /* ScreenA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenA.swift; sourceTree = "<group>"; };
-		E24579B31D7EBD6F00D164A2 /* ScreenB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenB.swift; sourceTree = "<group>"; };
-		E24579B41D7EBD6F00D164A2 /* ScreenB.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScreenB.xib; sourceTree = "<group>"; };
+		199D34501EB055D4003077FB /* AppScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenVC.swift; sourceTree = "<group>"; };
+		E23FDAB41D7E721800DA0E05 /* DetailColorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailColorVC.swift; sourceTree = "<group>"; };
 		E2550FE21D7DC16600B574D9 /* BootStrapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BootStrapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2550FE51D7DC16600B574D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2550FEC1D7DC16600B574D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2550FEF1D7DC16600B574D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2550FF11D7DC16600B574D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2550FF81D7DC36100B574D9 /* BootLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BootLogic.swift; sourceTree = "<group>"; };
-		E2550FF91D7DC36100B574D9 /* ConsoleScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleScreen.swift; sourceTree = "<group>"; };
-		E2550FFA1D7DC36100B574D9 /* MainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		E2550FFA1D7DC36100B574D9 /* TableViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,16 +45,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E23FDAB31D7E705D00DA0E05 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				E23FDAB41D7E721800DA0E05 /* ScreenA.swift */,
-				E24579B31D7EBD6F00D164A2 /* ScreenB.swift */,
-				E24579B41D7EBD6F00D164A2 /* ScreenB.xib */,
-			);
-			name = ViewControllers;
-			sourceTree = "<group>";
-		};
 		E2550FD91D7DC16600B574D9 = {
 			isa = PBXGroup;
 			children = (
@@ -83,28 +65,18 @@
 			isa = PBXGroup;
 			children = (
 				19664C321EAF414A00A16D0E /* colorData.plist */,
-				E2550FF71D7DC1B800B574D9 /* BootStrap */,
-				E23FDAB31D7E705D00DA0E05 /* ViewControllers */,
+				E2550FF81D7DC36100B574D9 /* BootLogic.swift */,
+				19664C361EAF4E6300A16D0E /* colorBar.swift */,
+				05563D2A1EAFA4C000BFEDC7 /* PieChartView.swift */,
+				E2550FFA1D7DC36100B574D9 /* TableViewVC.swift */,
+				199D34501EB055D4003077FB /* AppScreenVC.swift */,
+				E23FDAB41D7E721800DA0E05 /* DetailColorVC.swift */,
 				E2550FE51D7DC16600B574D9 /* AppDelegate.swift */,
 				E2550FEC1D7DC16600B574D9 /* Assets.xcassets */,
 				E2550FEE1D7DC16600B574D9 /* LaunchScreen.storyboard */,
 				E2550FF11D7DC16600B574D9 /* Info.plist */,
 			);
 			path = BootStrapDemo;
-			sourceTree = "<group>";
-		};
-		E2550FF71D7DC1B800B574D9 /* BootStrap */ = {
-			isa = PBXGroup;
-			children = (
-				E2550FF81D7DC36100B574D9 /* BootLogic.swift */,
-				19664C361EAF4E6300A16D0E /* colorBar.swift */,
-				E2550FF91D7DC36100B574D9 /* ConsoleScreen.swift */,
-				E2550FFA1D7DC36100B574D9 /* MainScreen.swift */,
-				199D34521EB082D3003077FB /* DSCameraHandler.swift */,
-				05563D2A1EAFA4C000BFEDC7 /* PieChartView.swift */,
-				199D34501EB055D4003077FB /* AppScreenViewController.swift */,
-			);
-			name = BootStrap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,7 +140,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2550FF01D7DC16600B574D9 /* LaunchScreen.storyboard in Resources */,
-				E24579B61D7EBD6F00D164A2 /* ScreenB.xib in Resources */,
 				19664C331EAF414A00A16D0E /* colorData.plist in Resources */,
 				E2550FED1D7DC16600B574D9 /* Assets.xcassets in Resources */,
 			);
@@ -183,12 +154,9 @@
 			files = (
 				05563D2B1EAFA4C000BFEDC7 /* PieChartView.swift in Sources */,
 				19664C371EAF4E6300A16D0E /* colorBar.swift in Sources */,
-				E24579B51D7EBD6F00D164A2 /* ScreenB.swift in Sources */,
-				E2550FFC1D7DC36100B574D9 /* ConsoleScreen.swift in Sources */,
-				E23FDAB51D7E721800DA0E05 /* ScreenA.swift in Sources */,
-				199D34511EB055D4003077FB /* AppScreenViewController.swift in Sources */,
-				199D34531EB082D3003077FB /* DSCameraHandler.swift in Sources */,
-				E2550FFD1D7DC36100B574D9 /* MainScreen.swift in Sources */,
+				E23FDAB51D7E721800DA0E05 /* DetailColorVC.swift in Sources */,
+				199D34511EB055D4003077FB /* AppScreenVC.swift in Sources */,
+				E2550FFD1D7DC36100B574D9 /* TableViewVC.swift in Sources */,
 				E2550FFB1D7DC36100B574D9 /* BootLogic.swift in Sources */,
 				E2550FE61D7DC16600B574D9 /* AppDelegate.swift in Sources */,
 			);
