@@ -10,7 +10,6 @@ import UIKit
 
 class AppScreenVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    
     var mainImageView: UIImageView!
     var baseImage = UIImage()
     
@@ -42,10 +41,18 @@ class AppScreenVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage:UIImage = (info[UIImagePickerControllerOriginalImage]) as? UIImage
         {
-            baseImage = pickedImage
-            mainImageView.image = baseImage
+//            baseImage = pickedImage
+//            mainImageView.image = baseImage
+            
+            let image = PassImage.sharedInstance
+            image.image = pickedImage
         }
+        
+        let pickImageVC = PickedImageVC()
+        
         self.dismiss(animated: true, completion: nil)
+        self.navigationController?.pushViewController(pickImageVC, animated: true)
+
     }
     
     func addAlbumButton(){
@@ -143,6 +150,12 @@ class AppScreenVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         mainScreen.about = "Gesture Recognizer iOS8"
         
         self.navigationController?.pushViewController(mainScreen, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        let image = PassImage.sharedInstance
+        image.image = baseImage
+        
     }
     
 }
